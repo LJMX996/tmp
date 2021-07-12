@@ -90,13 +90,13 @@ async function jdCash() {
   await getReward('2');
   $.exchangeBeanNum = 0;
   cash_exchange = $.isNode() ? (process.env.CASH_EXCHANGE ? process.env.CASH_EXCHANGE : `${cash_exchange}`) : ($.getdata('cash_exchange') ? $.getdata('cash_exchange') : `${cash_exchange}`);
-  if (cash_exchange === 'true') {
+  if (1 == 2) {
     if(Number($.signMoney) >= 2){
       console.log(`\n\n开始花费2元红包兑换200京豆，一周可换五次`)
       for (let item of ["-1", "0", "1", "2", "3"]) {
         $.canLoop = true;
         if ($.canLoop) {
-          for (let i = 0; i < 5; i++) {
+          for (let i = 0; i < 1; i++) {
             await exchange2(item);//兑换200京豆(2元红包换200京豆，一周5次。)
           }
           if (!$.canLoop) {
@@ -179,7 +179,7 @@ function index(info=false) {
   })
 }
 async function helpFriends() {
-  $.canHelp = true
+  $.canHelp = false
   for (let code of $.newShareCodes) {
     console.log(`去帮助好友${code['inviteCode']}`)
     await helpFriend(code)
