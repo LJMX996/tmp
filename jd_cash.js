@@ -178,23 +178,9 @@ function index(info=false) {
     })
   })
 }
-async function helpFriends() {
-  $.canHelp = false
-  for (let code of $.newShareCodes) {
-    console.log(`去帮助好友${code['inviteCode']}`)
-    await helpFriend(code)
-    if(!$.canHelp) break
-    await $.wait(1000)
-  }
-  // if (helpAuthor && $.authorCode) {
-  //   for(let helpInfo of $.authorCode){
-  //     console.log(`去帮助好友${helpInfo['inviteCode']}`)
-  //     await helpFriend(helpInfo)
-  //     if(!$.canHelp) break
-  //     await $.wait(1000)
-  //   }
-  // }
-}
+
+
+
 function helpFriend(helpInfo) {
   return new Promise((resolve) => {
     $.get(taskUrl("cash_mob_assist", {...helpInfo,"source":1}), (err, resp, data) => {
