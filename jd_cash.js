@@ -143,26 +143,6 @@ function index(info=false) {
               $.shareDate = data.data.result.shareDate;
               // $.log(`shareDate: ${$.shareDate}`)
               // console.log(helpInfo)
-              for(let task of data.data.result.taskInfos){
-                if (task.type === 4) {
-                  for (let i = 0; i < 1; ++i) {
-                    console.log(`去做${task.name}任务 ${i+1}/${task.times}`)
-                    await $.wait(5000)
-                  }
-                }
-                else if (task.type === 2) {
-                  for (let i = 0; i < 1; ++i) {
-                    console.log(`去做${task.name}任务 ${i+1}/${task.times}`)
-                    await doTask(task.type, task.jump.params.shopId)
-                    await $.wait(5000)
-                  }
-                }
-                else if (task.type === 16 || task.type===3 || task.type===5 || task.type===17 || task.type===21) {
-                  for (let i = 0; i < 1; ++i) {
-                    await $.wait(5000)
-                  }
-                }
-              }
             }
           }
         }
